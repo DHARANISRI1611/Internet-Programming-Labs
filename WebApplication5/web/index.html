@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Madurai Tourism</title>
+    <style>
+        /* External CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Internal CSS */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .description {
+            text-align: justify;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #333;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .fixed-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .form-container {
+            width: 300px;
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .services {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: changeServices 5s infinite;
+        }
+
+        @keyframes changeServices {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(0.9); }
+            75% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+
+    <body style="background-image:url('tourism.jpg');background-size:cover">
+    <header>
+        <h1>Madurai Tourism</h1>
+        <a href="#" style="float: right; color: #fff; text-decoration: none;">Signup/Login</a>
+    </header>
+    <div class="container">
+        <p class="description">Explore the cultural capital of Tamil Nadu with Madurai Tourism. From the majestic Meenakshi Amman Temple to the vibrant markets, Madurai has something for everyone.</p>
+        <table>
+            <tr>
+                <th>Destination</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td>Meenakshi Amman Temple</td>
+                <td>A historic Hindu temple dedicated to Goddess Parvati, known for its stunning architecture and intricate carvings.</td>
+                <td><img src="meenakshi.jpg" alt="Meenakshi Amman Temple"></td>
+            </tr>
+            <tr>
+                <td>Gandhi Memorial Museum</td>
+                <td>Home to a fascinating collection of exhibits related to Mahatma Gandhi's life and the Indian independence movement.</td>
+                <td><img src="gandhi museum.jpg" alt="Gandhi Memorial Museum"></td>
+            </tr>
+            <tr>
+                <td>Thirumalai Nayakkar Palace</td>
+                <td>A 17th-century palace known for its grand architecture and impressive courtyard.</td>
+                <td><img src="thirumalainayakar.jpg" alt="Thirumalai Nayakkar Palace"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="fixed-image">
+        <img src="form.png" alt="Form" onclick="document.getElementById('formContainer').style.display = 'block';">
+    </div>
+    <div class="form-container" id="formContainer">
+        <h2>Personal Details</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address"></textarea><br>
+            <label for="preferences">Preferences:</label><br>
+            <input type="text" id="preferences" name="preferences"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="services">
+        <img src="food.jpg" alt="Service 1">
+        <img src="room.jpg" alt="Service 2">
+        <img src="travel.jpg" alt="Service 3">
+    </div>
+</body>
+</html>
