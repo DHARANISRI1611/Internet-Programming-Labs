@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<script>
+    let employees = [
+    { name: "John Doe", age: 30, salary: 50000 },
+    { name: "Alice Smith", age: 25, salary: 45000 },
+    { name: "Bob Johnson", age: 35, salary: 60000 }
+];
+
+function sortEmployeesByName(employees) {
+    employees.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+}
+
+function displayEmployees(employees) {
+    console.log("Name\tAge\tSalary");
+    employees.forEach(employee => {
+        console.log(`${employee.name}\t${employee.age}\t${employee.salary}`);
+    });
+}
+
+console.log("Before sorting:");
+displayEmployees(employees);
+
+sortEmployeesByName(employees);
+
+console.log("\nAfter sorting:");
+displayEmployees(employees);
+
+</script>
