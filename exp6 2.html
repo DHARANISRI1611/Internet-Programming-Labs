@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>Count Consonants</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div>
+  <label for="input-text">Enter a string:</label>
+  <input type="text" id="input-text">
+  <button id="count-btn">Count Consonants</button>
+</div>
+<div id="result"></div>
+
+<script>
+  $(document).ready(function() {
+    $('#count-btn').click(function() {
+      var inputText = $('#input-text').val().toLowerCase();
+      var consonants = inputText.match(/[bcdfghjklmnpqrstvwxyz]/g);
+      var count = consonants ? consonants.length : 0;
+      $('#result').text('Number of consonants: ' + count);
+    });
+  });
+</script>
+</body>
+</html>

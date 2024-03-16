@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add to List Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+    <h1>Add to List Example</h1>
+    <form id="addItemForm">
+        <input type="text" id="itemText" placeholder="Enter an item">
+        <button type="submit">Add Item</button>
+    </form>
+    <ul id="itemList"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $('#addItemForm').submit(function(e) {
+                e.preventDefault();
+                var newItem = $('#itemText').val();
+                if (newItem.trim() === '') {
+                    alert('Please enter an item.');
+                    return;
+                }
+                $('#itemList').append('<li>' + newItem + '</li>');
+                $('#itemText').val('');
+            });
+        });
+    </script>
+</body>
+</html>
