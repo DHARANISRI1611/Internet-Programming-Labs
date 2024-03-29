@@ -1,3 +1,8 @@
+<%-- 
+    Document   : newjsp4
+    Created on : 29 Mar, 2024, 10:25:08 PM
+    Author     : dhar
+--%>
 
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -8,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/ritz");
+        <% Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/ip_8");
             Statement st=c.createStatement();
             ResultSet rs=st.executeQuery("select * from orders");
             
@@ -35,16 +40,16 @@
             ResultSet resu=st.executeQuery("select * from orders");
             int totalRevenue=0;
             while (resu.next()) {
-            int quantity = resu.getInt("Quantity");
-            double unitPrice = resu.getDouble("UNIT_PRICE");
+            int quantity = resu.getInt("quantity");
+            double unitPrice = resu.getDouble("unit_price");
             totalRevenue += quantity * unitPrice;
         }
             ResultSet r=st.executeQuery("select * from orders");
             int totalOrders=0,averageOrderValue=0;
             
             while (r.next()) {
-            int quantity = r.getInt("Quantity");
-            double unitPrice = r.getDouble("UNIT_PRICE");
+            int quantity = r.getInt("quantity");
+            double unitPrice = r.getDouble("unit_price");
             totalRevenue += quantity * unitPrice;
             totalOrders++;
         }
@@ -53,7 +58,7 @@
         }
             %>
         <table border="2" style="border-collapse: collapse">
-            <tr><th>ORDER_ID</th><th>Total Revenue</th><th>Average Revenue</th></tr>
+            <tr><th>Total Orders</th><th>Total Revenue</th><th>Average Revenue</th></tr>
               <tr><td> <%= totalorder %></td><td><%= totalRevenue %></td><td><%= averageOrderValue %></td></tr>
         </table>
         
